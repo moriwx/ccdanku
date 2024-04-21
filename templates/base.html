@@ -1,0 +1,111 @@
+<html lang="zh-cn">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>
+            NKU汉语方言形容词语料库
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon"
+              href="/static/favicon.ico"
+              type="image/x-icon" />
+
+        <link href="/static/packed.184dd975.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+        <link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel="stylesheet"/>
+        {% block head %}{% endblock %}
+        <script src="/static/packed.86c15d3f.js"></script>
+        <script src="/static/_js"></script>
+         
+    </head>
+    <body id="r-dataset">
+        
+        <div id="header">
+            <a href="/"><img src="/static/header.gif"/></a>
+        </div>
+
+        <div id="top" class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                     
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li id="m1" class="">
+                                <a href="/" title="Home">首页</a>
+                            </li>
+                            <li id="mdaohang" class="">
+                                <a href="/navi/" title="High Frequency Words">高频词一览</a>
+                            </li>
+                            <li id="m2" class="">
+                                <a href="/search/" title="Search">多条件查询</a>
+                            </li>
+                            <li id="m_provincemap" class="">
+                                <a href="/p_map/" title="Geo-distribution">地理分布</a>
+                            </li>
+                            <li id="m3" class="">
+                                <a href="/info/" title="Messages">消息</a>
+                            </li>
+<!--                             <li id="m_map" class="">
+                                <a href="/map/" title="map">地图(开发中)</a>
+                            </li>
+                            <li id="m_in" class="">
+                                <a href="/input/" title="inpost">数据录入(开发中)</a>
+                            </li>
+                            <li id="m4" class="">
+                                <a href="/test1/" title="test">高级功能(开发中)</a>
+                            </li> -->
+                        </ul>
+                    
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        
+{% block content %}
+{% endblock %}
+        
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                <footer>
+                    <div class="row-fluid" style="margin: 0px 0px 3px 0px; padding-top: 8px; border-top: 1px solid black;">
+                        <div class="span3" style="padding-left: 2px">
+                            <a href="http://gjcxcy.bjtu.edu.cn/NewLXItemListForStudentDetail.aspx?ItemNo=629583&year=2020&type=student&IsLXItem=0">项目信息</a>
+                        </div>
+                        <div class="span6" style="text-align: center;">
+                            <a target="_blank" href="https://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">津ICP备2021004653号-1</p></a><br />
+                            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12010402001463" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="../static/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">津公网安备12010402001463号</p></a>
+                        </div>
+                        <div class="span3" style="text-align: right; padding-right: 2px">
+                            反馈：<a>1</a>8<a>1</a>0<a>5</a>2<a>3</a>@<a>m</a>a<a>i</a>l<a>.</a>n<a>a</a>n<a>k</a>a<a>i</a>.<a>e</a>d<a>u</a>.<a>c</a>n
+                        </div>
+                    </div>
+                </footer>
+                </div>
+            </div>
+        </div>
+
+<!--         <div id="Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="ModalLabel"></h3>
+            </div>
+            <div id="ModalBody" class="modal-body"></div>
+        </div> -->
+        
+        {% block foot %}{% endblock %}
+        
+    </body>
+</html>

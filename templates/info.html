@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+    $(document).ready(function () {
+        $("#m3").addClass("active");
+    })
+</script>
+
+        <div class="container-fluid" style="height: 73%">
+            <div class="row-fluid">
+                <div class="span8">
+                    <a href='/static/info/hepa/demog.sas7bdat' style="text-decoration:underline">demog.sas7bdat</a>
+                    <a href='/static/info/hepa/ecg.sas7bdat' style="text-decoration:underline">ecg.sas7bdat</a>
+                    <a href='/static/info/hepa/final.sas7bdat' style="text-decoration:underline">final.sas7bdat</a>
+                    <a href='/static/info/hepa/pkparm.sas7bdat' style="text-decoration:underline">pkparm.sas7bdat</a>
+                    <a href='/static/info/hepa/treat.sas7bdat' style="text-decoration:underline">treat.sas7bdat</a>
+                </div>
+<!--                 <div id="sidebar" class="span3">
+                    <div class="alert">
+                        <h3>目录</h3>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+{% endblock %}

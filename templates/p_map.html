@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load my_tags %}
+
+{% block head %}
+<script>
+    $(document).ready(function () {
+        $("#m_provincemap").addClass("active");
+    })
+</script>
+<script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=密钥"></script>
+<style>
+    body,
+    html,
+    #container {
+        overflow: visible;
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div id="container"></div>
+{% endblock %}
+
+{% block foot %}
+<script>
+    var map = new BMapGL.Map('container', {
+        minZoom: 2,
+        maxZoom: 15});
+    map.centerAndZoom(new BMapGL.Point(104.438, 36.488), 5);
+    map.enableScrollWheelZoom(true);
+    map.addControl(new BMapGL.ScaleControl());
+    map.addControl(new BMapGL.ZoomControl());
+    
+    var label = new BMapGL.Label('省', {position: new BMapGL.Point(104, 36)});
+    {% for i in range %}
+    if ({{ data|index:i|index:3 }} > 0) {
+        label = new BMapGL.Label('{{ data|index:i|index:2 }} {{ data|index:i|index:3 }}', {position: new BMapGL.Point({{ data|index:i|index:0 }}, {{ data|index:i|index:1 }})});
+         map.addOverlay(label);
+    }
+    {% endfor %}    
+</script>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+    $(document).ready(function () {
+        $("#m1").addClass("active");
+    })
+</script>
+
+<!--         <div id="contextnavbar" class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target="#second">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div id="second" class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            
+    
+    <li class="">
+        <a href="#">子栏目</a>
+    </li>
+    
+    <li class="">
+        <a href="#">(开发中)</a>
+    </li>
+
+
+                        </ul>
+                    </div> --/.nav-collapse --
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span8">
+                    <h2>NKU汉语方言形容词语料库 (CCDAᴺᴷᵁ)</h2>
+                    <p class="lead">
+                        收录词条数:&emsp;{{ num }} <!-- <br /> {{ num }} items have been collected. -->
+                    </p>
+<!--                     <p>本站属于南开大学2020年国家级大学生创新创业训练计划立项基础性研究项目"构建汉语方言形容词数据库", 团队成员为来自汉语言文化学院和统计与数据科学学院的本科生.</p>
+                    <p>This site belongs to a program of National College Student Innovation and Entrepreneurship Training Program, Nankai University. We are undergraduates from College of Chinese Language and Culture and School of Statistics and Data Science.</p> -->
+                    <h3><a name="简介" style="color:black; text-decoration:none">简介</a></h3>
+                    <p>针对现今国内外汉语方言词汇研究的成果、欠缺及动态发展的情况，我们在进行汉语方言形容词的数据收集、整理、分析和完善工作，建立汉语方言形容词语料库。基于该语料库，我们将进行多层次研究，通过可视化的网页等与大众沟通、保持动态发展，为保护和促进语言资源的多样性、构建人类命运共同体做出贡献。</p>
+                    <p>Based on the achievements, deficiencies, and dynamic developments in the study of Chinese dialect vocabulary at home and abroad, we will collect, categorize, analyze, and improve the data, while establish the Corpus of Chinese Dialect Adjectives. Both the multi-level research based on the corpus and the connection with the public through visual web pages will conduct to maintain dynamic development. So as to protecting and promoting the diversity of language resources, and building a community of human destiny.</p>
+                    <h3><a name="语料规范说明" style="color:black; text-decoration:none">CCDA语料库语料规范说明</a></h3>
+                    <p>1. 白读音字下画单横线“__”，文读音字下画双横线“‗‗”。</p>
+                    <p>2. “○”表示有音但无字，或暂时未考出本字，则用同音字或训读字代替。</p>
+                    <p>3. 有音无字，或暂时未考出其本字的，在该字右上角加上标的“=”表示，比如：mau⁴²，意思是“无休止地”，表示为：卯⁼。</p>
+                    <p>4. 没有合适的同音借字，就用方框“□”表示，并注明国际音标和意义。</p>
+                    <p>
+                        5. 一个字有几个读音（形同义同音异）就在该字后右上角上标数字1、2、3……表示，比如：<br/>
+                        　　将就¹　　ʨiaŋ⁵⁵ ʨiəu³⁵　　凑合，勉强适应　　这个东西哪门个<sub>怎么样</sub>？——还~<br/>
+                        　　将就²　　ʨiaŋ⁵⁵ ʨiəu⁵⁵　　迎合别人　　　　　你莫~他
+                    </p>
+                    <p>6. 例句中用代替号“~”代替本字。</p>
+                    <p>7. 注音中加中圆点“·”的，表示后面的字是轻声。</p>
+                    <p>8. 例句后加“×”表示该方言中这种说法不成立。</p>
+                    <p>9. 例句后加“？”表示该方言中这种说法可说可不说。</p>
+                    <p>
+                        10. 多义词（同音同形不同义）录入的时候另起一行，在词汇前加上标数字，比如：<br/>
+                        　　¹硬阻　　坚硬<br/>
+                        　　²硬阻　　过得硬<br/>
+                        　　³硬阻　　狠、有来头
+                    </p>
+                    <p>11. “（ ）”表示圆括号里的字和音可有可无。如：<br/>　　下雨（哒）　　ɕia³⁵ y⁴²（·ta）</p>
+                    <p>12. 在国际音标下用下加单横线“__”表示小称音变。如果小称音变在口语中常用，而其本音已不常用，只列其变音，其本音可在对应参考文献的相应部分找出，也有本音和小称音变平常都用的，则在其本音后用括号再标出其变音。如：<br/>　　腻　　ȵi³³ ( ȵiɔŋ³⁵ )　　食物中油脂过多，使人厌食　　~人</p>
+                    <p>13. 用“[ ]”表示该字或音可以跟前面的那个字或音对等替换。如：<br/>　　拾干[旱]鱼　　ʂʅ⁵⁵ kã²¹³ [xã³¹] y⁵⁵</p>
+                    <p>14. “||”表示例句引自《聊斋俚曲》或《日用俗字》。</p>
+                    <p>15. “△”表示例句为熟语。</p>
+                    <p>16. 词条的汉字、注音后面“〈 〉”（单书名号）汇总的文字是对该词条的说明，<br/>　　〈面〉：面称　　〈背〉：背称　　〈新〉：新派说法　　〈旧〉：旧派说法　　〈儿〉：小儿用语　　〈婉〉：委婉说法
+</p>
+                    <p>17. 塞音尾如 ʔ꜉ ʔ꜌ 都表示成 ʔ¹̱¹̱ ʔ⁴̱⁴̱ ，塞音尾的连读变调表示成为 ʔ¹̱¹̱⁻³̱³̱。 </p>
+                    <p>18. a¹⁰ a²⁰ a³⁰ a⁴⁰ a⁵⁰，分别表示轻一度、轻二度、轻三度、轻四度、轻五度。连读变调后变成轻声，且未有轻声调值的，用如a³⁵⁻⁰表示。高、低轻声调分用a⁵⁰、a¹⁰表示。</p>
+                    <h3><a name="如何引用" style="color:black; text-decoration:none">如何引用CCDA语料库</a></h3>
+                    <p>如一般引用，建议您引用：<br />
+                        　　<font face="SimSun">向铭宇、蔡彦涛、张艺、蒲文钰、黄慧宇：汉语方言形容词语料库，2022年，网址：http://ccdanku.com/，引用日期。</font><br />
+                        如果引用本语料库中特定的某一本书的语料，引用举例如下：<br />
+                        　　<font face="SimSun">鲍厚星等著：《长沙方言研究》，向铭宇、蔡彦涛、张艺、蒲文钰、黄慧宇：汉语方言形容词语料库，2022年，网址：http://ccdanku.com/，引用日期。</font></p>
+                    <h3><a name="资料下载" style="color:black; text-decoration:none">CCDA语料库资料下载</a></h3>
+                    <p class="lead" style="margin-bottom:0;"><a href='/static/info/汉语方言归属表.xlsx' style="text-decoration:underline">汉语方言归属表</a></p>
+                    <p><b>说明：</b>依据《中国语言地图集·汉语方言卷（第2版）》<font size="1">（中国社会科学院语言研究所、中国社会科学院民族学与人类学研究所、香港城市大学语言资讯科学研究中心编，北京：商务印书馆，2012年）</font>整理，也按照书中依次所分十大方言区、次方言区、方言片、方言小片、方言点整理。因为此地图集的汉语方言行政区划和人口统计是按照中华人民共和国民政部编《中华人民共和国行政区划简册2004》<font size="1">（地图出版社2004年出版）</font>，《简册》所统计的资料时截止至2003年12月31日。<br /><b>引用格式：</b><font face="SimSun">中国社会科学院语言研究所、中国社会科学院民族学与人类学研究所、香港城市大学语言资讯科学研究中心编：《中国语言地图集·汉语方言卷（第2版）》，北京：商务印书馆，2012年。</font></p>
+                    <p class="lead" style="margin-bottom:0;"><a href='/static/info/汉语方言研究论著目录1.0.xlsx' style="text-decoration:underline">汉语方言研究论著目录1.0</a></p>
+                    <p><b>说明：</b>本表所收汉语方言研究论著，均是带有分类词表的论著。其中方言归属按《中国语言地图集·汉语方言卷》（第二版），行政区划按《中华人民共和国行政区划简册2004》。带#号或该县（区）右下角有下标文字的，表示该条方言归属不是该县（区）主要方言归属，具体可详见《中国语言地图集·汉语方言卷》（第二版）文字说明部分。会不断更新此目录表，请关注CCDA语料库所发布的通知。<br /><b>引用格式：</b><font face="SimSun">张艺、蒲文钰：《汉语方言研究论著目录1.0》，2022年3月19日，http://ccdanku.com/，引用日期。</font></p>
+                </div>
+                <div id="sidebar" class="span3">
+                    <div class="alert alert-info" style="width: 20%; position: fixed">
+                        <h3>首页导航</h3>
+                        <p><a href="#简介">➣　简介</a></p>
+                        <p><a href="#语料规范说明">➣　语料规范说明</a></p>
+                        <p><a href="#如何引用">➣　如何引用</a></p>
+                        <p><a href="#资料下载">➣　资料下载</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

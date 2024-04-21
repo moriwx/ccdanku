@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<script>
+    $(document).ready(function () {
+        $("#m_map").addClass("active");
+    })
+</script>
+<!-- <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=密钥"></script> -->
+<script type="text/javascript" src="//api.map.baidu.com/api?v=3.0&ak=密钥"></script>
+<script type="text/javascript" src="//api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="//api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+<style>
+    body,
+    html,
+    #container {
+        overflow: visible;
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!--     <label>数据：<input type="text" id="num"></label>
+    <input type="button" onclick="RUN()" value="确认"><br /> -->
+    <div id="container"></div>
+{% endblock %}
+
+{% block foot %}
+<script>
+    var map = new BMap.Map('container', {
+        minZoom: 2,
+        maxZoom: 15});
+    map.centerAndZoom(new BMap.Point(104.438, 36.488), 5);
+    map.enableScrollWheelZoom();
+    
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.NavigationControl());
+    
+    var MAX = 10;
+    var markers = [];
+    var pt = null;
+    var i = 0;
+    for (; i < MAX; i++) {
+        pt = new BMap.Point(Math.random() * 15 + 102, Math.random() * 15 + 24);
+        markers.push(new BMap.Marker(pt));
+    }
+    //最简单的用法，生成一个marker数组，然后调用markerClusterer类即可。
+    var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markers});
+    
+</script>
+{% endblock %}
